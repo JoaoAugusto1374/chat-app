@@ -1,0 +1,105 @@
+/* Container principal do chat */
+body{
+  background-image: url(assets/QUINAMUIU1.jpg);
+  background-size: 100% 100%
+}
+.chat-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #0D8C39;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Cabeçalho do chat */
+  .chat-header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Caixa de mensagens */
+  .chat-box {
+    height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #FBFFFB;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Estilo geral das mensagens */
+  .message {
+    max-width: 70%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    display: inline-block;
+  }
+  
+  /* Estilo para as mensagens do usuário */
+  .message.user {
+    background-color: #14A1D9;
+    color: white;
+    align-self: flex-end; /* Alinha as mensagens do usuário à direita */
+  }
+  
+  /* Estilo para as mensagens do bot */
+  .message.bot {
+    background-color: #F2BE22;
+    color: black;
+    align-self: flex-start; /* Alinha as mensagens do bot à esquerda */
+  }
+  
+  /* Caixa de entrada e botão de envio */
+  .input-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .input-box input {
+    width: 80%;
+    padding: 13px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background-color: #FBFFFB;
+    color: black;
+  }
+  
+  .input-box button {
+    padding: 10px 20px;
+    background-color: #0897DD;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .input-box button:hover {
+    background-color: #405367;
+  }
+  
+ 
+  .chat-footer {
+    text-align: center;
+    padding: 1px;
+    background-color: #04A03B;
+    font-size: 14px;
+    color: #f1e6e6;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  
