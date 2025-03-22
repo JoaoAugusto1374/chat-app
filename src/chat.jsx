@@ -5,22 +5,22 @@ export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState("");
 
-  // Referência para o contêiner de mensagens
+  
   const messagesEndRef = useRef(null);
 
-  // Efeito para rolar até a última mensagem
+  
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]); // Rola para a última mensagem sempre que `messages` mudar
+  }, [messages]); 
 
-  // Função para enviar a mensagem para a API e obter a resposta
+  
   const sendMessage = async () => {
     if (message.trim()) {
       const newMessage = { text: message, sender: "user" };
-      setMessages((prev) => [...prev, newMessage]); // Adiciona a mensagem do usuário
+      setMessages((prev) => [...prev, newMessage]); 
 
       try {
-        // Envia a mensagem para a API
+        
         const response = await fetch("https://nau8q0ot0e.execute-api.us-east-1.amazonaws.com/prd/send-message", {
           method: "POST",
           headers: {
@@ -30,10 +30,10 @@ export default function Chat() {
         });
 
         const data = await response.json();
-        console.log("Resposta da API:", data);  // Verifica a resposta completa
+        console.log("Resposta da API:", data);  
 
         if (data.body) {
-          // Adiciona a resposta do bot no chat
+          
           const botMessage = { text: data.body, sender: "bot" };
           setMessages((prev) => [...prev, botMessage]);
         } else {
@@ -43,7 +43,7 @@ export default function Chat() {
         console.error("Erro ao enviar mensagem para a API:", error);
       }
 
-      setMessage(""); // Limpa o campo de mensagem após o envio
+      setMessage(""); 
     }
   };
 
