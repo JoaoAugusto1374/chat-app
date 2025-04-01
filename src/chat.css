@@ -1,4 +1,4 @@
-body{
+body {
   background-image: url(assets/QUINAMUIU1.jpg);
   background-size: 100% 100%;
   margin: 0;
@@ -17,7 +17,7 @@ body{
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   background-color: #11bb4c;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -64,6 +64,18 @@ body{
   align-self: flex-start;
 }
 
+.message img {
+  max-width: 100%;  
+  height: auto; 
+  max-height: 300px;  
+  margin: 10px 0;
+  border-radius: 8px;
+  object-fit: cover; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .input-box {
   display: flex;
   justify-content: space-between;
@@ -93,6 +105,40 @@ body{
   background-color: #405367;
 }
 
+.input-box .image-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0897DD;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.input-box .image-button:hover {
+  background-color: #405367;
+}
+
+.input-box input[type="file"] {
+  display: none;
+}
+
+.image-preview-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;  
+}
+
+/* Estilo para pré-visualização da imagem */
+.preview-image {
+  max-width: 50px;  
+  max-height: 50px;
+  margin-bottom: 10px;  
+  border-radius: 10px;
+  object-fit: cover;  
+}
+
+/* Footer */
 .chat-footer {
   text-align: center;
   padding: 1px;
@@ -133,6 +179,11 @@ body{
     padding: 8px 15px;
   }
 
+  .input-box label {
+    padding: 8px 15px; 
+    font-size: 14px; 
+  }
+
   .chat-footer {
     font-size: 12px;
   }
@@ -164,6 +215,11 @@ body{
 
   .input-box button {
     padding: 6px 12px;
+  }
+
+  .input-box label {
+    padding: 6px 12px; 
+    font-size: 12px; 
   }
 
   .chat-footer {
