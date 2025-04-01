@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/chat-app/',
   build: {
-    outDir: 'docs', // Direciona para a pasta 'dist'
+    outDir: 'dist', // Direciona para a pasta 'dist'
     assetsDir: 'assets', // Pasta para os assets
   }
 })
