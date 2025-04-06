@@ -8,8 +8,14 @@ export default function Chat() {
   const [image, setImage] = useState(null);
   const [base64Image, setBase64Image] = useState(null);
   const messagesEndRef = useRef(null);
+  const [userId, setUserId] = useState("");
 
-  const userId = crypto.randomUUID();
+  useEffect(() => {
+    // Sempre gera um novo userId a cada vez que a página recarrega
+    const newId = crypto.randomUUID();
+    localStorage.setItem("userId", newId); // ainda salva, se quiser consultar depois
+    setUserId(newId);
+  }, []);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -27,7 +33,6 @@ export default function Chat() {
       setMessage("");
       setImage(null);
       setBase64Image(null);
-
       setIsTyping(true);
 
       try {
@@ -42,8 +47,6 @@ export default function Chat() {
         });
 
         const data = await response.json();
-        console.log("Resposta da API:", data);
-
         if (data.body) {
           setMessages((prev) => [...prev, { text: data.body, sender: "bot" }]);
         } else {
